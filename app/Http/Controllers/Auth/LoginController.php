@@ -27,6 +27,17 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+    
+    protected function redirectTo()
+    {
+        // if (Auth::user()->hasRole('envadmin')) {
+        //     return '/events';
+        // } elseif (Auth::user()->hasRole('sysadmin')) {
+        //     return '/environments';
+        // } else {
+        //     Auth::logout();
+        // }
+    }
 
     /**
      * Create a new controller instance.
