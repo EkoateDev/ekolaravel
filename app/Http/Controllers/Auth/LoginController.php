@@ -47,4 +47,15 @@ class LoginController extends Controller
     {
         return 'username';
     }
+
+    /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showLoginForm()
+    {
+        return view('auth.login')
+        ->with('page', 'login');
+    }
 }
