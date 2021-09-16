@@ -17,7 +17,7 @@ class LoginController extends Controller
     | redirecting them to your home screen. The controller uses a trait
     | to conveniently provide its functionality to your applications.
     |
-    */
+     */
 
     use AuthenticatesUsers;
 
@@ -27,17 +27,6 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
-    
-    protected function redirectTo()
-    {
-        // if (Auth::user()->hasRole('envadmin')) {
-        //     return '/events';
-        // } elseif (Auth::user()->hasRole('sysadmin')) {
-        //     return '/environments';
-        // } else {
-        //     Auth::logout();
-        // }
-    }
 
     /**
      * Create a new controller instance.
@@ -47,5 +36,15 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return 'username';
     }
 }
